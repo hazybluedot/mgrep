@@ -48,6 +48,7 @@ void mgrep(const regex_t* preg, flags_t flags) {
 	    exit(1);
 	}
 	readlines(preg, p, sb.st_size);
+	munmap(p,sb.st_size);
     } else {
 	read_stdin(preg);
     }
